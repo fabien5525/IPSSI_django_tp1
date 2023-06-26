@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/game.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="game-container">
+  <div class="game-image">
+    {% with game.image|cut:'app/static/' as img %}
+    <img src="{% static img %}" alt="Card {{ game.title }}" type="image/jpeg" width="300" height="200">
+    {% endwith %}
+  </div>
+  <div class="game-details">
+    <h2>{{ game.title }}</h2>
+    <p>
+      Supports:
+    <ul>
+      {% for support in game.supports.all %}
+      <li>{{ support.title }}</li>
+      {% endfor %}
+    </ul>
+    </p>
+    <p>Price: ${{ game.price }}</p>
+    <button class="buy-button">Buy Now</button>
+    <p>{{ game.description }}</p>
+  </div>
+</div>
+{% endblock %}

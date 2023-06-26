@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/connexion.css' %}">
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/connexion.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="left">
+    <form class="form">
+      <input type="text" placeholder="Email" required>
+      <input type="password" placeholder="Mot de passe" required>
+      <button type="submit" class="submit">Envoyer</button>
+      <a href="#">Pas encore de compte ?</a>
+      <a href="#">Mot de passe oublié ?</a>
+    </form>
+  </div>
+  <div class="right">
+    <img src="{% static 'img/wallpaper.jpg' %}" alt="Image" class="wallpaper">
+  </div>
+</div>
+{% endblock %}

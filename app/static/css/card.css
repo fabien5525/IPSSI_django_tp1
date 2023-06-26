@@ -1,0 +1,71 @@
+/* Styles pour les cartes */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem; /* Add padding of 1rem to the card container */
+}
+
+.card {
+    position: relative;
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    z-index: -1;
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+}
+
+.card-image picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+    background-color: black; /* Add a black background to the card content */
+}
+
+.card-title {
+    margin-top: 0;
+}
+
+.card-price {
+    margin-bottom: 0;
+}
+
+/* Styles pour la vue responsive */
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}

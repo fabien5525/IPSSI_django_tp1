@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="card-container">
+  {% for game in games %}
+  <div class="card">
+    <div class="card-image">
+      <picture>
+        {% with game.image|cut:'app/static/' as img %}
+        <source srcset="{% static img %}" alt="Card {{ game.title }}" type="image/jpeg">
+        {% endwith %}
+        <img src="placeholder.jpg" alt="Image {{card}}">
+      </picture>
+    </div>
+    <div class="card-content">
+      <h3 class="card-title">
+        <a href="{% url 'game' game.id %}">
+          {{ game.title }}
+        </a>
+      </h3>
+      <p class="card-price">{{ game.price }} €</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+.game-container {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 1rem;
+}
+
+.game-image img {
+  width: 300px;
+  height: 200px;
+}
+
+.game-details {
+  margin-left: 20px;
+}
+
+.game-details h2 {
+  font-size: 24px;
+}
+
+.game-details p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.buy-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background: #45a049;
+}
